@@ -3,22 +3,30 @@
 
 using namespace std;
 
-int n, currSum, maxSum;
+int n, l, r, maxSum, currSum;
 int ciag[MAXN];
 
-int main () {
+int main() {
 	
 	cin >> n;
-	maxSum = 0;
 	for(int i = 0; i < n; i++) {
 		cin >> ciag[i];
 	}
-	for(int i = 0; i < n; i++) {
-		currSum = 0;	
-		for(int j = i; j < n; j++) {
-			currSum += ciag[j];	
-			maxSum = max(maxSum, currSum);
+	l = r = 0;
+	maxSum = currSum = max(0, ciag[0]);
+	while(l < n) {
+		if(currSum >= 0 && r < n) {
+			r++;
+			currSum += ciag[r];
+		} else if(r == l) {
+			r++;
+			l++;
+			currSum = ciag[l];
+		} else {
+			currSum -= ciag[l];
+			l++;
 		}
+		maxSum = max(maxSum, currSum);
 	}
 	cout<<maxSum<<"\n";
 	return 0;
