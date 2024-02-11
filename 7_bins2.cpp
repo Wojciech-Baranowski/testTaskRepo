@@ -23,6 +23,10 @@ int main() {
 		pref[i] = pref[i - 1] + tab[i];
 	}
 	for(int i = 0; i < k; i++) {
+		if((long long) tab[0] * tab[0] > roo[0]) {
+			cout<<0<<" ";
+			continue;
+		}
 		if((long long)tab[n - 1] * tab[n - 1] <= roo[i]) {
 			cout<<pref[n - 1]<<" ";
 			continue;
