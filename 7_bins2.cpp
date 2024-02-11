@@ -4,9 +4,9 @@
 using namespace std;
 
 int n, k;
-int tab[MAXN];
+long long tab[MAXN];
 long long roo[MAXN];
-int pref[MAXN];
+long long pref[MAXN];
 
 int main() {
 
