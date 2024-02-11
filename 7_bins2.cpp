@@ -41,9 +41,9 @@ int main() {
 	for(int i = 1; i < n; i++) {
 		pref[i] = pref[i - 1] + tab[i];
 	}
-	for(int i = 0; i < 0; i++) {
+	for(int i = 0; i < k; i++) {
 		if((long long)tab[0] * tab[0] > roo[i]) {
-//			cout<<0<<" ";
+			cout<<0<<" ";
 		} else {
 			cout<<binSearch(0, n - 1, roo[i])<<" ";
 		}
