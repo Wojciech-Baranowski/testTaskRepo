@@ -16,7 +16,7 @@ int main() {
 	}
 	for(int i = 0; i < t; i++) {
 		if(((t - i) * n + i * m < k) && ((t - i - 1) * n + (i + 1) * m >= k)) {
-			cout<<i + i<<"\n";
+			cout<<i + 1<<"\n";
 			return 0;
 		}
 	}
