@@ -2,9 +2,10 @@
 
 using namespace std;
 
-int n, k;
+int n, k, l, r;
 string s;
-int currSum, maxSum;
+int maxSum;
+int currSum;
 int d;
 
 bool isVowel(char c) {
@@ -13,24 +14,22 @@ bool isVowel(char c) {
 
 int main() {
 	cin >> n >> k >> s;
-	currSum = maxSum = d = 0;
+	maxSum = currSum = d = 0;
 	for(int i = 0; i < n; i++) {
 		if(isVowel(s[i])) {
-			d = k - 1;
-			currSum = min(k, i + 1);
-			for(int j = i + 1; j < n; j++) {
-				if(isVowel(s[j])) {
-					d = k;
-				}
-				if(d == 0) {
-					maxSum = max(maxSum, currSum);
-					break;
-				}
-				currSum++;
-				d--;
+			d = k;
+			if(currSum == 0) {
+				currSum += min(k - 1, i);
 			}
-			maxSum = max(maxSum, currSum);
 		}
+		if(d <= 0) {
+			maxSum = max(maxSum, currSum);
+			currSum = 0;
+		} else {
+			currSum++;
+		}
+		d--;
 	}
+	maxSum = max(maxSum, currSum);
 	cout<<maxSum<<"\n";
 }
