@@ -4,9 +4,28 @@
 using namespace std;
 
 int n, k;
-long long tab[MAXN];
+
+int tab[MAXN];
 long long roo[MAXN];
-long long pref[MAXN];
+int pref[MAXN]; 
+
+int binSearch(int a, int b, long long k0) {
+	if(b - a <= 1) {
+		if((long long)tab[b] * tab[b] > k0) {
+			while(a < n - 1 && tab[a] == tab[a + 1]) a++;
+			return pref[a];
+		} else {
+			while(b < n - 1 && tab[b] == tab[b + 1]) b++;
+			return pref[b];
+		}
+	}
+	int p = (a + b) >> 1;
+	if((long long) tab[p] * tab[p] > k0) {
+		return binSearch(a, p - 1, k0);
+	} else {
+		return binSearch(p, b, k0);
+	}
+}
 
 int main() {
 
@@ -22,19 +41,11 @@ int main() {
 	for(int i = 1; i < n; i++) {
 		pref[i] = pref[i - 1] + tab[i];
 	}
-	for(int i = 0; i < k; i++) {
-		if((long long) tab[0] * tab[0] > roo[0]) {
-			cout<<0<<" ";
-			continue;
-		}
-		if((long long)tab[n - 1] * tab[n - 1] <= roo[i]) {
-			cout<<pref[n - 1]<<" ";
-			continue;
-		}
-		for(int j = 0; j < n - 1; j++) {
-			if((long long)tab[j] * tab[j] <= roo[i] && (long long)tab[j + 1] * tab[j + 1] > roo[i]) {
-				cout<<pref[j]<<" ";
-			}
+	for(int i = 0; i < 0; i++) {
+		if((long long)tab[0] * tab[0] > roo[i]) {
+//			cout<<0<<" ";
+		} else {
+			cout<<binSearch(0, n - 1, roo[i])<<" ";
 		}
 	}
 	cout<<"\n";
