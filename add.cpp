@@ -3,9 +3,10 @@ using namespace std;
 
 int main()
 {
-	int a, b;
+	int a, b, c;
 	cin >> a;
 	cin >> b;
-	cout << (a+b) << endl;
+	cin >> c;
+	cout << (a+b+c) << endl;
 }
 
