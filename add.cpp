@@ -8,5 +8,6 @@ int main()
 	cin >> b;
 	cin >> c;
 	cout << (a+b+c) << endl;
+	return 0;
 }
 
