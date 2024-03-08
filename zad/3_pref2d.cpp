@@ -1,26 +1,64 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int tab[1000000];
-int p[1000000];
+int tab[1000][1000];
+int p[1000][1000];
 int n;
+int m;
 int k;
-int a;
-int b;
+int ax;
+int ay;
+int bx;
+int by;
+
+int prefixSum(int ax, int ay, int bx, int by)
+{
+		cout << "done" << endl;
+		int sum = 0;
+		for(int i = ay; i <= by;i++)
+		{
+			cout << i << "/" << bx << endl;
+			sum += (p[i][bx] - p[i][ax-1]);
+		}
+		return sum;
+}
 
 int main()
 {
 	cin >> n;
+	cin >> m;
 	cin >> k;
-	for(int i = 0; i < n;i++) { cin >> tab[i]; }
-	p[0] = tab[0];
-	for(int i = 1; i < n;i++) { p[i] = p[i-1] + tab[i];}
+	cout << n << "/" << m << endl;
+	for(int i = 0; i < n;i++) 
+	{ 
+		for(int j = 0; j < m;j++)
+		{
+			cin >> tab[i][j]; 
+		}
+	}
+	
+	cout << "done3" << endl;
+	for(int i = 0; i < n;i++)
+	{
+		p[n][0] = tab[n][0];
+	}
+	for(int i = 1; i < n;i++) 
+	{ 
+		for(int j = 1; j < m;j++)
+		{
+			p[i][j] = p[i][j-1] + tab[i][j];
+		}
+	}
 	
 	for(int i = 0; i < k; i++)
 	{
-		cin >> a;
-		cin >> b;
-		cout << p[b-1] - p[a-2] << endl;
+		cin >> ax;
+		cin >> ay;
+		cin >> bx;
+		cin >> by;
+		
+		cout << "done2" << endl;
+		cout << prefixSum(ax-1,ay-1,bx-1,by-1) << endl;
 	}
 	
 	return 0;
