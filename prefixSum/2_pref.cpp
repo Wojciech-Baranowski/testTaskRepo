@@ -22,6 +22,8 @@ int main()
 		cin >> b;
 		cout << p[b-1] - p[a-2] << endl;
 	}
+	
+	return 0;
 }
 
 
