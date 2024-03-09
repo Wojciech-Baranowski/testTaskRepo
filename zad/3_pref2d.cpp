@@ -15,12 +15,12 @@ int by;
 
 int prefixSum(int ax, int ay, int bx, int by)
 {
-		int sum = 0;
-		for(int i = ay; i <= by;i++)
-		{
-			sum += (p[i][bx] - p[i][ax-1]);
-		}
-		return sum;
+	int sum = 0;
+	for(int i = ay; i <= by;i++)
+	{
+		sum += (p[i][bx] - p[i][ax-1]);
+	}
+	return sum;
 }
 
 int main()
