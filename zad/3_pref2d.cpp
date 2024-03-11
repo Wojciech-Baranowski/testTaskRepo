@@ -16,9 +16,14 @@ int by;
 int prefixSum(int ax, int ay, int bx, int by)
 {
 	int sum = 0;
-	for(int i = ay; i <= by;i++)
+	for(int i = ay; i <= by; i++)
 	{
-		sum += (p[i][bx] - p[i][ax-1]);
+		int temp = 0;
+		if(ax-1 >= 0)
+		{
+			temp = p[i][ax-1];
+		}
+		sum += (p[i][bx] - temp);
 	}
 	return sum;
 }
@@ -29,7 +34,7 @@ int main()
 	cin >> m;
 	cin >> k;
 	
-	for(int i = 0; i < n;i++) 
+	for(int i = 0; i < n; i++) 
 	{ 
 		for(int j = 0; j < m;j++)
 		{
@@ -37,10 +42,9 @@ int main()
 		}
 	}
 	
-	
-	for(int i = 0; i < n;i++) { p[i][0] = tab[i][0]; }
-	for(int i = 0; i < n;i++) 
+	for(int i = 0; i < n; i++) 
 	{ 
+		p[i][0] = tab[i][0]; 
 		for(int j = 1; j < m;j++)
 		{
 			p[i][j] = p[i][j-1] + tab[i][j];
