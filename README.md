@@ -1,1 +1,2 @@
-Repozytorium przeznaczone dla zajęć z informatyki olimpijskiej.
+# Cześć!
+Witaj w mojej bazie 👀
