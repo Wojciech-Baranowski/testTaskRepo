@@ -3,6 +3,7 @@
 using namespace std;
 
 int n, k;
+int a, b;
 int C[MAXN], P[MAXN];
 
 int main() {
@@ -21,7 +22,6 @@ int main() {
 	}
 
 	for (int i = 0; i < k; i++) {
-		int a, b;
 		cin >> a >> b;
 		cout << P[b] - P[a - 1] << "\n";
 	}
