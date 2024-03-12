@@ -25,4 +25,6 @@ int main() {
 		cin >> a >> b;
 		cout << P[b] - P[a - 1] << "\n";
 	}
+
+	return 0;
 }
