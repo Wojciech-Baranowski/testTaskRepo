@@ -31,6 +31,7 @@ int main()
 			{
 				maxSum = sum;
 			}
+			continue;
 		}
 		if (sum < 0)
 		{
