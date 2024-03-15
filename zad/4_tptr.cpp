@@ -27,12 +27,14 @@ int main()
 		{
 			sum -= tab[a];
 			a++;
+			
 			if (maxSum < sum)
 			{
 				maxSum = sum;
 			}
 			continue;
 		}
+		
 		if (sum < 0)
 		{
 			if (a == b)
@@ -42,12 +44,14 @@ int main()
 			}
 			sum -= tab[a];
 			a++;
+			
 			if (maxSum < sum)
 			{
 				maxSum = sum;
 			}
 			continue;
 		}
+		
 		if (sum >= 0)
 		{
 			if (b < n)
@@ -55,6 +59,7 @@ int main()
 				b++;
 				sum += tab[b];
 			}
+			
 			if (maxSum < sum)
 			{
 				maxSum = sum;
