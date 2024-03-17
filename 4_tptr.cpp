@@ -1,18 +1,11 @@
 #include <iostream>
+#include <algorithm>
 #define MAXN 1000000
 using namespace std;
 
 int n;
 int a, b;
-int c[MAXN], c_maks, c_suma;
-
-int maks(int x, int y) {
-	if (x > y) {
-		return x;
-	} else {
-		return y;
-	}
-}
+int c[MAXN], suma, maks_suma;
 
 int main() {
 	ios_base::sync_with_stdio(0);
@@ -25,30 +18,31 @@ int main() {
 
 	a = 0;
 	b = 0;
-	c_maks = maks(0, c[0]);
-	c_suma = maks(0, c[0]);
+	maks_suma = max(0, c[0]);
+	suma = max(0, c[0]);
 
 	while (a < n) {
-		if (c_suma >= 0) {
+		if (suma >= 0) {
 			if (b < n) {
 				b++;
-				c_suma += c[b];
+				suma += c[b];
 			} else {
-				c_suma -= c[a];
+				suma -= c[a];
 				a++;
 			}
 		} else {
 			if (a == b) {
 				a++;
 				b++;
-				c_suma = c[a];
+				suma = c[a];
 			} else {
-				c_suma -= c[a];
+				suma -= c[a];
 				a++;
 			}
 		}
-		c_maks = maks(c_maks, c_suma);
+		maks_suma = max(maks_suma, suma);
 	}
 
-	cout << c_maks << "\n";
+	cout << maks_suma << "\n";
+	return 0;
 }
