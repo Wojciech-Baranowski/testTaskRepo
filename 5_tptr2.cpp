@@ -5,7 +5,9 @@ using namespace std;
 
 int n, k;
 int a, b;
-int spg, l, l_max;
+int spg;
+int l, l_max;
+
 char s[MAXN];
 
 bool samogloska(char c) {
@@ -16,16 +18,19 @@ bool samogloska(char c) {
 }
 
 int main() {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+
 	cin >> n >> k;
 	for (int i = 0; i < n; i++) {
 		cin >> s[i];
 	}
 
-	l = 0;
-	l_max = 0;
 	a = 0;
 	b = 0;
 	spg = 0;
+	l = 0;
+	l_max = 0;
 
 	while (b < n) {
 		if (samogloska(s[b])) {

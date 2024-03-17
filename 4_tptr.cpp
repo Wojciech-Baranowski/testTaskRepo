@@ -5,7 +5,9 @@ using namespace std;
 
 int n;
 int a, b;
-int c[MAXN], suma, maks_suma;
+int suma, maks_suma;
+
+int c[MAXN];
 
 int main() {
 	ios_base::sync_with_stdio(0);
@@ -18,8 +20,8 @@ int main() {
 
 	a = 0;
 	b = 0;
-	maks_suma = max(0, c[0]);
 	suma = max(0, c[0]);
+	maks_suma = max(0, c[0]);
 
 	while (a < n) {
 		if (suma >= 0) {
