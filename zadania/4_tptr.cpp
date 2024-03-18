@@ -18,14 +18,14 @@ int BiggestSum()
 		}
 		else
 		{
-			if(csum >= 0)
+			if (csum >= 0)
 			{
                 b++;
                 csum += t[b];
             }
             else
             {
-                if(a == b)
+                if (a == b)
                 {
                     b++;
                     a++;
