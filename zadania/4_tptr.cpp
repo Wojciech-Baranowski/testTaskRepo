@@ -20,24 +20,24 @@ int BiggestSum()
 		{
 			if (csum >= 0)
 			{
-                b++;
-                csum += t[b];
-            }
-            else
-            {
-                if (a == b)
-                {
-                    b++;
-                    a++;
-                    csum -= t[a - 1];
-                    csum += t[b];
-                }
-                else
-                {
-                    a++;
-                    csum -= t[a - 1];
-                }
-            }
+				b++;
+				csum += t[b];
+			}
+			else
+			{
+				if (a == b)
+				{
+					b++;
+					a++;
+					csum -= t[a - 1];
+					csum += t[b];
+				}
+				else
+				{
+					a++;
+					csum -= t[a - 1];
+				}
+			}
 		}
 		bsum = max(bsum, csum);
 
