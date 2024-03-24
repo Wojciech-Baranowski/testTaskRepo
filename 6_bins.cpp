@@ -1,27 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std; 
-int t, n, m, k; 
+long t, n, m, k; 
 
-int binSearch() {
-	if (m * t < k) {
-		return 0; 
-	}
-	int a = 0, b = m; 
-	else {
-		if (a == b) {
-			if (a = min) {
-				return a; 
-			}
-			else {
-				return -1; 
-			}
-		 }
-		 int srodek = (a + b)>>1; 
-		 if ()
+int binSearch(long a, long b) { 
+	if (a == b) { 
+		return a; 
+	} 
+	long mid = (a + b)>>1;  
+	if ((mid*m)+(t-mid)*n >= k) {
+		return binSearch(a, mid); 
+	} else {
+		return binSearch(mid + 1, b); 
 	}
 }
 int main() {
-	cin >> t >> n >> m >> k;	//>>1 przesunięcie bitowe 
-	cout << binSearch() << "\n"; 
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	
+	cin >> t >> n >> m >> k;	
+	if (m*t < k) {
+		cout << "POMOC" << "\n";
+	} else if (n*t >= k){
+		cout << 0 << "\n"; 
+	} else {
+		cout << binSearch(1, t*m) << "\n"; 
+	}
+	
 	return 0; 
 }
