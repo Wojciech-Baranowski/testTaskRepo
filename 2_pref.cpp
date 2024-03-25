@@ -4,7 +4,7 @@ using namespace std;
 
 int n, k;
 int a, b;
-int C[MAXN], P[MAXN];
+int C[MAXN], P[MAXN + 1];
 
 int main() {
 	ios_base::sync_with_stdio(0);
