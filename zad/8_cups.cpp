@@ -19,8 +19,9 @@ int main()
 	for (int i = 0; i < n; i++)
 	{
 		cin >> temp;
+		temp.erase(0,5);
 		
-		int index = stoi(temp.substr(12, 14));
+		int index = stoi(temp) - 1000000000;
 		errors[index]++;
 	}
 	
