@@ -6,6 +6,8 @@ int errors[1000];
 int maxIndex = 0;
 int n;
 
+string temp;
+
 int main()
 {
 	for (int i = 0; i < 1000; i++)
@@ -16,7 +18,6 @@ int main()
 	cin >> n;
 	for (int i = 0; i < n; i++)
 	{
-		string temp;
 		cin >> temp;
 		
 		int index = stoi(temp.substr(12, 14));
