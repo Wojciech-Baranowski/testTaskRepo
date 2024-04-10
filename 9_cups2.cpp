@@ -27,11 +27,10 @@ int main() {
 	cout << "\n";
 	for(int i = T - 1; i > 0; i--) {
 		
-		if(!cup[i].empty()) {	
-			
+		if(!cup[i].empty()) {
 			string unsorted[cup[i].size()];
-			
 			int it = 0;
+			
             for (auto element : cup[i]) {
                 unsorted[it++] = element;
             }	
