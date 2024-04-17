@@ -20,13 +20,10 @@ int main()
 			
 			int tempC = 1;
 			
-			if (!maximums_queue.empty() && tempI > maximums_queue.back().second)
+			while (!maximums_queue.empty() && tempI > maximums_queue.back().second)
 			{
-				for (auto it : maximums_queue)
-				{
-					tempC += it.second;
-				}		
-				maximums_queue.clear();
+				tempC += maximums_queue.back().second;
+				maximums_queue.pop_back();
 			}
 			
 			maximums_queue.push_back(make_pair(make_pair(tempI, tempS), tempC));
