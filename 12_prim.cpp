@@ -28,7 +28,7 @@ int solve(int a, int b) {
 	int Max = 0;
 	int tmp = 2;
 	int dif; 
-    for(int i = 0; i < tab.size(); i++) {
+	for(int i = 0; i < tab.size(); i++) {
 		if(tab[i] > b) {
 			break; 
 		}
