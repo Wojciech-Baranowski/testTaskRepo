@@ -17,7 +17,6 @@ void sieve() {
         if(prime[i]) {
             int j = i<<1;
             tab.push_back(i);
-            
             while(j <= N) {
 				prime[j] = false;
 				j += i;
