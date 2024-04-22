@@ -5,7 +5,7 @@ bool isNotOptimusPrime[1000001];
 int a = 0;
 int b = 0;
 
-int maxLength = 0;
+int maxLength = 1;
 int currentLength = 0;
 int currentDistance = -1;
 int theDistance = 0;
@@ -41,13 +41,13 @@ int main()
 			if (theDistance == currentDistance)
 			{
 				currentLength++;
-				maxLength = max(currentLength, maxLength);
 			}
 			else
 			{
 				currentDistance = theDistance;
 				currentLength = 2;
 			}
+			maxLength = max(currentLength, maxLength);
 			theDistance = 0;
 		}
 	}
