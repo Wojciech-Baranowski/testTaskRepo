@@ -35,6 +35,10 @@ int main()
 	a = max(3, a);
 	for (int i = a; i <= b; i++)
 	{	
+		if(isNotOptimusPrime[i] && maxLength == 1)
+		{
+			continue;
+		}
 		theDistance++;
 		if (!isNotOptimusPrime[i])
 		{
