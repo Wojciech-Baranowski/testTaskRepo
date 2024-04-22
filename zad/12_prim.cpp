@@ -2,6 +2,7 @@
 using namespace std;
 
 bool isNotOptimusPrime[1000001];
+bool metPrimus;
 int a = 0;
 int b = 0;
 
@@ -32,9 +33,17 @@ int main()
 	
 	InitializePrimes();
 	
-	a = max(3, a);
 	for (int i = a; i <= b; i++)
 	{	
+		if(!metPrimus)
+		{
+			if(!isNotOptimusPrime[i])
+			{
+				metPrimus = true;
+			}
+			continue;
+		}
+		
 		theDistance++;
 		if (!isNotOptimusPrime[i])
 		{
