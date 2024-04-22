@@ -8,13 +8,13 @@ int b = 0;
 
 int maxLength = 1;
 int currentLength = 0;
-int currentDistance = -1;
+int currentDistance = 0;
 int theDistance = 0;
 
 void InitializePrimes()
 {
 	isNotOptimusPrime[1] = true;
-	for  (int i = 2; i <= b; i++)
+	for (int i = 2; i <= b; i++)
 	{
 		if (isNotOptimusPrime[i] == false)
 		{
@@ -35,9 +35,9 @@ int main()
 	
 	for (int i = a; i <= b; i++)
 	{	
-		if(!metPrimus)
+		if (!metPrimus)
 		{
-			if(!isNotOptimusPrime[i])
+			if (!isNotOptimusPrime[i])
 			{
 				metPrimus = true;
 			}
