@@ -1,1 +1,1 @@
-Repetytorium przeznaczone do zajęć Inforamtyki Olimpijskiej
+Repetytorium przeznaczone do zajęć Informatyki Olimpijskiej
