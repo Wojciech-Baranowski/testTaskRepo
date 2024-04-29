@@ -1,11 +1,17 @@
 #include<bits/stdc++.h>
+
+#define M 1000000007;
+
 using namespace std;
 
 struct Mint {
 	int value;
 	int p; 
-	 
-	Mint(int x, int m) : value(x), p(m) {}
+	
+	Mint(long long _number) {
+		this->p = M;
+		this->value = _number % p;
+	}
 	
 	int add(int a, int b) {
 		return ((a % p) + (b % p)) % p;
@@ -17,24 +23,24 @@ struct Mint {
 		return ((a % p) * (b % p)) % p;
 	}
 	int divide(int a, int b){
-		return ((a % p) * reverse(b)) % p;
+		return ((a % p) * inverse(b)) % p;
 	}
-	int power_(int a, int b) {
+	int pow(int a, int b) {
 		if (b == 0) {
 			return 1;
 		}
 		else if ((b % 2) == 0) {
-			long long result = power_(a, b / 2);
+			long long result = pow(a, b / 2);
 			return (result * result) % p;
 		}
 		else {
-			return ((a * power_(a, b - 1)) % p);
+			return (((long long)a * pow(a, b - 1)) % p);
 		}
 	}
-	int reverse(int b) {
-		return power_(b, p - 2) % p; 
+	int inverse(int b) {
+		return pow(b, p - 2) % p;
 	}
-}; 
+};
 
 int main() {
     return 0;
