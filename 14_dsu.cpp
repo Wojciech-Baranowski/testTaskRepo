@@ -2,12 +2,12 @@
 using namespace std;
 int n, m, rep[1000000], s[1000000], a, b;
 string q;
-int f(a) {
+int f(int a) {
 	if (rep[a] != a)
 		rep[a] = f(rep[a]);
 	return rep[a];
 }
-void o(a, b) {
+void o(int a, int b) {
 	a = f(a);
 	b = f(b);
 	if (s[a] > s[b]) {
@@ -31,9 +31,9 @@ int main() {
 		if (q == "CHECK") {
 			cin>>a>>b;
 			if (f(a) == f(b))
-				cout<<"TAK"<<'/n';
+				cout<<"TAK"<<'\n';
 			else
-				cout<<"NIE"<<'/n';
+				cout<<"NIE"<<'\n';
 		}
 	}
 	return 0;
