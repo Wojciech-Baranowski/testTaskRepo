@@ -1,1 +1,1 @@
-# Mikolaj
+Repetytorium przeznaczone do zajęć Informatyki Olimpijskiej
