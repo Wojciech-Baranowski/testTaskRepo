@@ -12,9 +12,11 @@ void o(int a, int b) {
 	b = f(b);
 	if (s[a] > s[b]) {
 		rep[b] = a;
+		s[a] += s[b];
 	}
 	else 
 		rep[a] = b;
+		s[a] += s[b];
 }
 int main() {
 	cin>>n>>m;
